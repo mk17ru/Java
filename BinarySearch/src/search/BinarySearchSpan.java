@@ -58,10 +58,11 @@ public class BinarySearchSpan {
         // -1 <= l < r <= a.length && a[r] <= x < a[l] && r > l + 1
         // r > l + 1 -> l < (r + l) / 2 == m < r
         // -1 < m < a.length -> a[m] exist
+        //
         if (a[m] <= x) {
             // a[m] <= x && a[r] <= x < a[l] && -1 <= l < m < r <= a.length -> a[r] <= a[m] <= x < a[l]
             // l' == l && r' == m -> r' < r && l' == l -> r' - l' < r - l
-            // -1 <= l < m <= a.lxength && a[m] <= x < a[l] && r' - l' < r - l
+            // -1 <= l < m <= a.length && a[m] <= x < a[l] && r' - l' < r - l
             return binaryLeftRecursiveSearch(l, m, x, a);
         } else {
             // x < a[m] && a[r] <= x < a[l] && -1 <= l < m < r <= a.length -> a[r] <= x < a[m] <= a[l]
